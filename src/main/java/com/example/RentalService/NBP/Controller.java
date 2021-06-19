@@ -27,5 +27,12 @@ public class Controller {
             return ResponseEntity.ok(service.getPrice(waluta,dni));
         }
 
+        @GetMapping("/nbp/avarage/{waluta}")
+        public ResponseEntity<Double> getAvarage(@ApiParam(value = "Currency", example = "GBP")@PathVariable String waluta, @ApiParam(value = "days", example = "10")@RequestParam int dni)
+        {
+            return ResponseEntity.ok(service.getAvarage(waluta,dni));
+        }
+
+
 }
 ///@PathVariable String waluta, @RequestParam int dni
